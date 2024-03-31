@@ -1,0 +1,59 @@
+name: Deploy tO Azure Web App
+
+on:
+  push:
+    branches:
+      - HW
+      - main
+
+permissions:
+  contents: write
+  packages: write
+  actions: read
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Install Azure CLI
+      run: |
+        curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+    - name: Azure Login
+      uses: azure/login@v2
+      with:
+        creds: '{"clientId":"${{ secrets.AZURE_CLIENT_ID }}", "clientSecret":"${{ secrets.AZURE_CLIENT_SECRET }}", "subscriptionId":"${{ secrets.AZURE_SUBSCRIPTION_ID }}", "tenantId":"${{ secrets.AZURE_TENANT_ID }}"}'
+
+    - name: Set up Terraform
+      uses: hashicorp/setup-terraform@v3
+      with:
+        terraform_version: latest
+        cli_config_credentials_token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Terraform Init
+      run: |
+        cd terraform
+        terraform init
+    - name: Terraform Plan
+      run: |
+        cd terraform
+        terraform plan
+    - name: Terraform Apply
+      run: |
+        cd terraform
+        terraform apply -auto-approve
+    - name: Deploy to Azure Web App
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'omerullahs-biography-page'
+        slot-name: 'production'
+        package: '.'
+        azure_client_id: ${{ secrets.AZURE_CLIENT_ID }}
+        azure_client_secret: ${{ secrets.AZURE_CLIENT_SECRET }}
+        azure_subscription_id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        azure_tenant_id: ${{ secrets.AZURE_TENANT_ID }}
