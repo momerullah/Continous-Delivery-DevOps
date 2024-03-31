@@ -51,10 +51,6 @@ Refer to each assignment's specific instructions for details on how to compile/r
 
 Each assignment includes a `REFLECTION.md` file, where I share challenges encountered, lessons learned, and the impact of CI/CD practices on software development.
 
-## License
-
-This project is licensed under the [ISC License](LICENSE).
-
 ## Contact
 
 For more information, contact me at [omarullahk@gmail.com].
