@@ -4,7 +4,7 @@ This repository hosts the assignments for SEE 441 at DePaul University, focusing
 
 ## Assignments Overview
 
-### Assignment 1: Basic CI Pipeline
+### [Assignment 1: Basic CI Pipeline](Ass%201)
 
 **Objective:** The goal is to create a basic CI pipeline using GitHub Actions, involving a simple application and its unit tests. The primary learning outcome is understanding and implementing CI practices rather than application development.
 
@@ -14,7 +14,7 @@ This repository hosts the assignments for SEE 441 at DePaul University, focusing
 - Creating a CI pipeline that triggers on every push and pull request to the main branch.
 - Creating a release pipeline that triggers on version tag pushes, compiles the software, runs unit tests, and creates a GitHub release with attached artifacts.
 
-### Assignment 2: Building, Testing, and Publishing Containers
+### [Assignment 2: Building, Testing, and Publishing Containers](Ass%202)
 
 **Objective:** This assignment focuses on Docker containers, encompassing their creation, testing, and publishing to GitHub Container Registry. It aims to familiarize students with Docker, container testing, and publishing practices.
 
@@ -24,7 +24,7 @@ This repository hosts the assignments for SEE 441 at DePaul University, focusing
 - Testing the container using Google Container Structure Tests.
 - Automating the container's build, test, and publish process using a GitHub Actions workflow.
 
-### Assignment 3: Web Application Deployment to Azure Using Terraform and GitHub Actions
+### [Assignment 3: Web Application Deployment to Azure Using Terraform and GitHub Actions](Ass%203)
 
 **Objective:** The objective is to deploy a simple Node.js web application to Azure, utilizing Terraform for infrastructure provisioning and GitHub Actions for continuous deployment.
 
@@ -35,7 +35,7 @@ This repository hosts the assignments for SEE 441 at DePaul University, focusing
 
 ## Getting Started
 
-To utilize these assignments, clone this repository and explore each assignment in its respective folder (`Ass 1`, `Ass 2`, `Ass 3`). Each folder contains detailed instructions, code, and CI/CD configurations related to the assignment.
+To utilize these assignments, clone this repository and explore each assignment in its respective folder ([`Ass 1`](Ass%201), [`Ass 2`](Ass%202), [`Ass 3`](Ass%203)). Each folder contains detailed instructions, code, and CI/CD configurations related to the assignment.
 
 ## Prerequisites
 
